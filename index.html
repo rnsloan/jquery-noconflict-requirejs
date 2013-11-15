@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Loading jQuery in .noconflict() mode With RequireJS</title>
+</head>
+<body>
+<h1>Loading jQuery in .noconflict() mode With RequireJS</h1>
+
+<p>jQuery version <span id="version"></span> loaded by RequireJS</p>
+
+<p>jQuery version <span id="versionNormal"></span> loaded normally</p>
+
+<script data-main="js/app" src="js/lib/require.js"></script>
+<!-- output from r.js -->
+<!--<script data-main="tools/app-built.js" src="js/lib/require.js"></script>-->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+<script>
+    (function ($) {
+        var version = $().jquery;
+        $('#versionNormal').text(version);
+    })(jQuery);
+</script>
+
+</body>
+</html>
